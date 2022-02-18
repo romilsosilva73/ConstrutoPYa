@@ -30,7 +30,7 @@ def dividir(num1, num2):
 
 
 #main
-# TEST
+
 if __name__ == '__main__':
 
     #mensagem_boas_vindas
