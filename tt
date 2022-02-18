@@ -1,0 +1,39 @@
+    else:
+        return 'Não divirás por zero'
+#main
+
+if __name__ == '__main__':
+
+    #mensagem_boas_vindas
+    print_hi('Romilso')
+
+    #soma
+    result = somar(30, 2)
+    print(f'O resultado da soma é: {result}')
+
+    #subtração
+    result =  subtrair(30, 2)
+    print(f'O resultado da subtraçãoo é: {result}')
+
+    #multiplicação
+    result = multiplicar(30, 2)
+    print(f'O resultado da multiplicação é: {result}')
+
+    # divisão
+    result = dividir(30, 0)
+    print(f'O resultado da divisão é: {result}')
+
+    #TESTES UNITÁRIOS
+
+    #teste da função  'somar'
+
+def test_somar_compacto_1():
+ assert 8  == somar(5, 3)
+
+
+def test_somar_compacto_2():
+     assert somar(5, 3) == 8
+
+
+def test_somar():
+    # 1 - Configura/Prepara
