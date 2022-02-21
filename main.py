@@ -124,7 +124,7 @@ def test_multiplicar_didatico():
     resultado_atual = multiplicar(num1, num2)
 
     # 3 - Check
-
+#
     assert resultado_atual == resultado_esperado
 
     def test_dividir_compacto():
