@@ -28,6 +28,13 @@ def dividir(num1, num2):
     else:
         return 'Não divirás por zero'
 
+def test_dividir_com_zero_try_except(num1, num2):
+
+    try:
+        return num1 / num2
+    except:
+        return 'Não divirás por zero'
+
 
 #main
 
@@ -141,6 +148,10 @@ def test_dividir_didatico():
 def test_dividir_com_zero_compacto():
         assert dividir(10, 0) == 'Não divirás por zero'
 
+def test_dividir_try_except():
+       assert test_dividir_com_zero_try_except(10, 2) == 5
+       assert test_dividir_com_zero_try_except(10, 0) == 'Não divirás por zero'
+
 def test_dividir_com_zero_didatico():
     # 1 - Configura/Prepara
 
@@ -158,6 +169,9 @@ def test_dividir_com_zero_didatico():
 
 @pytest.mark.parametrize('num1, num2, result', [
         # valores
+
+    #testes positivos
+
         (10, 2, 12),  # test 1
         (10, -2, 8),  # test 2
         (-10, 2, -8),  # test 3
@@ -165,12 +179,47 @@ def test_dividir_com_zero_didatico():
         (0, -2, -2),  # test 5
         (-10, 0, -10),  # test 6
         (0, 0, 0),  # test 7
+
+    # testes negativos
+
+    # (10, 2, 12),  # test 1
+    (10, 2, 11),  # test 1
+    (10, 2, 13),  # test 1
+
+    # (10, -2, 8),  # test 2
+    (10, -2, 6),  # test 2
+    (10, -2, 7),  # test 2
+
+    # (-10, 2, -8),  # test 3
+    (-10, 2, -7),  # test 3
+    (-10, 2, -9),  # test 3
+
+    # (-10, -10, -20),  # test 4
+    (-10, -10, -19),  # test 4
+    (-10, -10, -21),  # test 4
+
+    # (0, -2, -2),  # test 5
+    (0, -2, -1),  # test 5
+    (0, -2, -3),  # test 5
+
+    # (-10, 0, -10),  # test 6
+    (-10, 0, -11),  # test 6
+    (-10, 0, -9),  # test 6
+
+    # 0, 0, 0),  # test 7
+    (0, 0, -1),  # test 7
+    (0, 0, 1),  # test 7
+
 ])
 
-
 def test_somar_compacto_classe_pytest_mark_parametrize(num1, num2, result):
-    assert somar(num1, num2) == result
 
+    try:
+        assert somar(num1, num2) == result
+    except AssertionError:
+        print(f" Entrou no Except: {AssertionError}")
+        print(f"\n ")
+        pass
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
