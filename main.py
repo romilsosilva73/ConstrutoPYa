@@ -33,12 +33,12 @@ def test_dividir_com_zero_try_except(num1, num2):
     try:
         return num1 / num2
     except:
-        return 'Não divirás por zero'
+        return 'ZeroDivisionError'
 
 
 #main
 
-#Test 5
+#Test 10
 
 if __name__ == '__main__':
 
@@ -148,9 +148,26 @@ def test_dividir_didatico():
 def test_dividir_com_zero_compacto():
         assert dividir(10, 0) == 'Não divirás por zero'
 
-def test_dividir_try_except():
-       assert test_dividir_com_zero_try_except(10, 2) == 5
-       assert test_dividir_com_zero_try_except(10, 0) == 'Não divirás por zero'
+
+@pytest.mark.parametrize('num1, num2, result',[
+        # valores
+
+    #testes positivos
+
+        (10, 2, 5),  # test 1
+        (1, 1, 1),  # test 2
+        (0, 1, 0),  # test 3
+
+    # testes negativos
+
+        (10, 0,'ZeroDivisionError'),  # test 4
+        (1, 0,'ZeroDivisionError'),  # test 5
+])
+
+def test_dividir_try_except(num1, num2, result):
+
+          assert test_dividir_com_zero_try_except(num1, num2) == result
+
 
 def test_dividir_com_zero_didatico():
     # 1 - Configura/Prepara
