@@ -114,10 +114,10 @@ def testar_dados_usuarios_csv(id, email, nome, sobrenome, avatar):  # função q
     except Exception as fail:  # Qualquer exceção será tratada a seguir
         print(f'Falha inesperada ocorreu : {fail}')
 
-    print('\n TESTE 1 - Id: {} \n  - Email:   {} \n - Nome:  {} \n  - Sobre nome:  {} \n  - Avatar:  {}  \n'.format(
+    print('\n TESTE 1  - Dados obtidos API \n - Id: {} \n  - Email:   {} \n - Nome:  {} \n  - Sobre nome:  {} \n  - Avatar:  {}  \n'.format(
                 id_obtido, email_obtido, nome_obtido, sobrenome_obtido, avatar_obtido))
 
-    print('\n TESTE 2 - Id: {} \n  - Email:   {} \n - Nome:  {} \n  - Sobre nome:  {} \n  - Avatar:  {}  \n'.format(
+    print('\n TESTE 2 -  Dados obtidos CSV \n - Id: {} \n  - Email:   {} \n - Nome:  {} \n  - Sobre nome:  {} \n  - Avatar:  {}  \n'.format(
                 id, email, nome, sobrenome, avatar))
 #função que faz algo --> Fora do meu computador
 # API que vamos usar para fazer o teste:
