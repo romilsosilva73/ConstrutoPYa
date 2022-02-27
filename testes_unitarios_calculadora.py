@@ -34,7 +34,7 @@ def dividir(num1, num2):
         return 'Não divirás por zero'
 
 
-def test_dividir_com_zero_try_except(num1, num2):
+def dividir_com_zero_try_except(num1, num2):
     try:
         return num1 / num2
     except:
@@ -168,7 +168,7 @@ def test_dividir_com_zero_compacto():
     (1, 0, 'ZeroDivisionError'),  # test 5
 ])
 def test_dividir_try_except(num1, num2, result):
-    assert test_dividir_com_zero_try_except(num1, num2) == result
+    assert dividir_com_zero_try_except(num1, num2) == result
 
 
 def test_dividir_com_zero_didatico():
