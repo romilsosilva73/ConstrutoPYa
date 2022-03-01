@@ -86,22 +86,22 @@ def testar_consultar_usuario():
 
     headers = {'Content-Type': 'application/json'}
     resposta = requests.get('https://petstore.swagger.io/v2/user/T_user_name', headers=headers)
-#(f'{url}/{username}'
     json_body = resposta.json()
+
     print(resposta) # status code 200
     print(resposta.status_code)  # status code 200
     print(resposta.json())  # responde body
 
     assert resposta.status_code == status_code_esperado
 
-    assert resposta['id'] == id_esperado
-    assert resposta['username'] == username_esperado
-    assert resposta['firstName'] == firstName_esperado
-    assert resposta['lastName'] == lastName_esperado
-    assert resposta[' emai'] == email_esperado
-    assert resposta['password'] == password_esperado
-    assert resposta['phone'] == phone_esperado
-    assert resposta['userStatus'] == userStatus_esperado
+    assert json_body['id'] == int(id_esperado)
+    assert json_body['username'] == username_esperado
+    assert json_body['firstName'] == firstName_esperado
+    assert json_body['lastName'] == lastName_esperado
+    assert json_body['email'] == email_esperado
+    assert json_body['password'] == password_esperado
+    assert json_body['phone'] == phone_esperado
+    assert json_body['userStatus'] == userStatus_esperado
 
     status_code_esperado = 200  # comunication
     #status_code_esperado = 404  # comunication #DEFEITO 404 IDENTIFICADO NA API
