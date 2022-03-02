@@ -134,9 +134,11 @@ def test_multiplicar_didatico():
     #
     assert resultado_atual == resultado_esperado
 
-    def test_dividir_compacto():
+def test_dividir_compacto():
         assert dividir(10, 2) == 5
 
+def test_dividir_com_zero_compacto():
+    assert dividir(10, 0) == 'Não divirás por zero'
 
 def test_dividir_didatico():
     # 1 - Configura/Prepara
@@ -154,8 +156,7 @@ def test_dividir_didatico():
     assert resultado_atual == resultado_esperado
 
 
-def test_dividir_com_zero_compacto():
-    assert dividir(10, 0) == 'Não divirás por zero'
+
 
 
 @pytest.mark.parametrize('num1, num2, result', [
